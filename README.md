@@ -2,19 +2,19 @@
 
 เว็บแอปตัวอย่างสำหรับจัดการ Task โดยเน้นการควบคุมสิทธิ์ Admin/Employee, โค้ดที่แยกหน้าที่ชัดเจน และการบันทึกเหตุผลในการตัดสินใจออกแบบ
 
-## Tech Stack (แผน)
+## Tech Stack
 
 - **JavaScript + React** — ใช้สร้างหน้าจอและแบ่ง UI เป็น component
 - **Vite** — ใช้เริ่ม development server และ build เว็บแอปได้สะดวก
 - **React Router** — แยกหน้าและป้องกันเส้นทางตามสถานะ login และ role
 - **React Context** — เก็บสถานะผู้ใช้และ token สำหรับแชร์ระหว่างหน้า
 - **Mock API ในหน่วยความจำ** — จำลองการเรียก server แบบ asynchronous โดยไม่ต้องมี backend ตามโจทย์
-- **CSS ปกติ** — จัดรูปแบบหน้าจอโดยไม่เพิ่ม dependency ที่ไม่จำเป็น
+- **Tailwind CSS 4** — จัด layout และสถานะของ UI ใน JSX โดยใช้ utility classes
 - **PostgreSQL (เฉพาะ schema ที่ออกแบบ)** — ใช้แสดงแบบฐานข้อมูลสำหรับระบบจริงใน Section 2; เว็บแอป Section 3 ไม่เชื่อมต่อฐานข้อมูล
 
 ## วิธีเริ่มเว็บแอป
 
-เมื่อสร้าง Section 3 เสร็จ ให้เปิด terminal ที่โฟลเดอร์ `section-3` แล้วรัน:
+เปิด terminal ที่โฟลเดอร์ `section-3` แล้วรัน:
 
 ```bash
 npm install
@@ -38,11 +38,11 @@ npm run dev
 ## โครงสร้าง Repository
 
 ```text
-internship-test/
+intership-test-V2/
 ├── README.md
 ├── START.md
 ├── section-1/
-│   ├── flowchart.md
+│   ├── flowchart.mmd
 │   └── DECISIONS.md
 ├── section-2/
 │   └── schema.sql
@@ -51,9 +51,9 @@ internship-test/
 │   └── src/
 │       ├── components/
 │       ├── context/
-│       ├── data/
 │       ├── routes/
 │       ├── services/
+│       ├── pages/
 │       ├── App.jsx
 │       └── main.jsx
 └── section-4/
@@ -62,12 +62,16 @@ internship-test/
     └── BUGS.md
 ```
 
-## แผนการทำงาน
+## Section ที่ส่งมอบ
 
-1. **Section 1 — System Design:** สร้าง Mermaid flowchart ให้ครอบคลุม login, route guard, การเปลี่ยนสถานะ task และ logout พร้อมบันทึก Decision Log จำนวน 5 ข้อ
-2. **Section 2 — Database Design:** ระบุ Tech Stack และออกแบบ PostgreSQL schema สำหรับ users, projects, tasks และ audit log พร้อม constraint และ index
-3. **Section 3 — Web App:** สร้าง React app ด้วย mock data/API, loading/error states, route guards และ UI แยกตาม role
-4. **Section 4 — Debugging:** แก้โค้ด Express route และหน้า Employee ตามกติกา authorization, validation และ asynchronous updates พร้อมรายงานบั๊กและวิธีพิสูจน์
+1. **Section 1 — System Design:** Mermaid flowchart และ Decision Log D1–D5
+2. **Section 2 — Database Design:** PostgreSQL schema สำหรับ users, projects, tasks และ audit log
+3. **Section 3 — Web App:** React app ด้วย mock data/API, loading/error states, role route guards และ UI แยกตาม role
+4. **Section 4 — Debugging:** แก้ Express route และหน้า Employee พร้อมรายงานบั๊กและวิธีพิสูจน์
+
+## วิธีจำลอง API Error
+
+ในโค้ด `section-3/src/services/mockApi.js` มี `setMockApiFailure(true)` สำหรับทดสอบ error handling; ค่าเริ่มต้นปิดการจำลอง error เพื่อให้แอปใช้งานได้ปกติ
 
 ## กฎสิทธิ์หลัก
 
