@@ -68,7 +68,7 @@ intership-test-V2/
 1. **Section 1 — System Design:** Mermaid flowchart และ Decision Log D1–D5
 2. **Section 2 — Database Design:** PostgreSQL schema สำหรับ users, projects, tasks และ audit log
 3. **Section 3 — Web App:** React app ด้วย mock data/API, loading/error states, role route guards และ UI แยกตาม role
-4. **Section 4 — Debugging:** แก้ Express route และหน้า Employee พร้อมรายงานบั๊กและวิธีพิสูจน์
+4. **Section 4 — Debugging:** แก้ Express route และหน้า Employee 
 
 ## วิธีจำลอง API Error
 
@@ -82,4 +82,4 @@ intership-test-V2/
 - การเปลี่ยนสถานะสำเร็จต้องบันทึก audit log ในส่วนที่ออกแบบสำหรับระบบจริง
 =======
 # internship-test-V2
->>>>>>> d0330481366f45f1d9fdde2f9358011c6cb22879
+>>>>>>>
